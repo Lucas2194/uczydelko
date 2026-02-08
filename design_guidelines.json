@@ -1,0 +1,155 @@
+{
+  "identity": {
+    "persona": "E1",
+    "tone": "Warm, Supportive, Professional, Child-friendly",
+    "archetype": "Vibrant Play (Modified for Trust)",
+    "mission": "Create a safe, inviting digital space for parents seeking educational support."
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Fredoka, sans-serif",
+      "weights": ["600", "700"],
+      "usage": "All section titles, hero headlines. Use tight tracking for large sizes.",
+      "fallback": "Nunito, sans-serif"
+    },
+    "body": {
+      "font_family": "Outfit, sans-serif",
+      "weights": ["400", "500"],
+      "usage": "Paragraphs, lists, form labels.",
+      "fallback": "Inter, sans-serif"
+    },
+    "special": {
+      "font_family": "Caveat, cursive",
+      "usage": "Small accents, 'handwritten' notes, testimonials signatures."
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": "#FFB703",
+      "primary_foreground": "#023047",
+      "secondary": "#FB8500",
+      "secondary_foreground": "#FFFFFF",
+      "accent": "#8ECAE6",
+      "accent_foreground": "#023047",
+      "background": "#FEFAE0",
+      "foreground": "#023047",
+      "muted": "#FDF0D5",
+      "muted_foreground": "#669BBC",
+      "card": "#FFFFFF",
+      "card_foreground": "#023047",
+      "border": "#E9C46A",
+      "input": "#FFFFFF",
+      "ring": "#FB8500"
+    },
+    "usage_rules": {
+      "backgrounds": "Use 'background' (Cream) for main areas, 'card' (White) for content blocks.",
+      "text": "Never use pure black. Use 'foreground' (Deep Navy).",
+      "gradients": "Avoid harsh gradients. Use soft, sunny transitions if necessary (e.g., Cream to Pale Yellow)."
+    }
+  },
+  "layout": {
+    "grid_system": "Bento Grid for services. Asymmetric 'Tetris' grid for Hero.",
+    "spacing": {
+      "container_padding": "p-6 md:p-12 lg:p-24",
+      "section_gap": "gap-16 md:gap-24",
+      "element_gap": "gap-4 md:gap-8"
+    },
+    "radius": "rounded-2xl or rounded-3xl (Soft, friendly shapes)",
+    "containers": "Max width 1200px for content, full width for backgrounds."
+  },
+  "components": {
+    "buttons": {
+      "style": "Pill-shaped (rounded-full).",
+      "animation": "Hover: scale-105, active: scale-95. Bouncy transition.",
+      "shadow": "shadow-lg hover:shadow-xl"
+    },
+    "cards": {
+      "style": "White background, rounded-3xl, soft shadow-md. Optional: 'Sticker' effect with 4px white border on colored backgrounds.",
+      "hover": "translate-y-[-4px] transition-transform duration-300"
+    },
+    "forms": {
+      "style": "Soft rounded inputs (rounded-xl), large padding (p-4).",
+      "focus": "Ring-2 ring-secondary ring-offset-2"
+    },
+    "dividers": {
+      "style": "Use SVG waves or organic curves between sections. No straight hard lines."
+    }
+  },
+  "visual_enhancers": {
+    "textures": "Subtle paper grain or noise overlay (opacity 0.05) to add tactility.",
+    "decorations": "Floating abstract shapes (circles, blobs) in background. Hand-drawn doodles (arrows, stars) near CTAs.",
+    "icons": "Lucide-react (rounded style) or Phosphor Icons (Duotone). Use 'secondary' color for icons."
+  },
+  "media": {
+    "image_style": "Warm lighting, candid moments, natural smiles. Rounded corners (rounded-2xl).",
+    "image_urls": {
+      "hero_bg": {
+        "url": "https://images.unsplash.com/photo-1760113762872-631f32c7fab0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwzfHxjaGlsZCUyMHBsYXlpbmclMjB3aXRoJTIwd29vZGVuJTIwYmxvY2tzfGVufDB8fHx8MTc3MDU2MTE4Nnww&ixlib=rb-4.1.0&q=85",
+        "alt": "Happy child playing with colorful blocks outdoors",
+        "category": "hero"
+      },
+      "services_math": {
+        "url": "https://images.unsplash.com/photo-1545558014-8692077e9b5c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwxfHxjaGlsZCUyMHBsYXlpbmclMjB3aXRoJTIwd29vZGVuJTIwYmxvY2tzfGVufDB8fHx8MTc3MDU2MTE4Nnww&ixlib=rb-4.1.0&q=85",
+        "alt": "Colorful learning toys for math",
+        "category": "service"
+      },
+      "services_reading": {
+        "url": "https://images.unsplash.com/photo-1544773088-d142e38f5793?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwyfHxwcmVzY2hvb2wlMjBjaGlsZCUyMGRyYXdpbmclMjBoYXBweXxlbnwwfHx8fDE3NzA1NjExODJ8MA&ixlib=rb-4.1.0&q=85",
+        "alt": "Child holding a drawing",
+        "category": "service"
+      },
+      "services_memory": {
+        "url": "https://images.unsplash.com/photo-1555448049-67b919120e75?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwyfHxjaGlsZCUyMHBsYXlpbmclMjB3aXRoJTIwd29vZGVuJTIwYmxvY2tzfGVufDB8fHx8MTc3MDU2MTE4Nnww&ixlib=rb-4.1.0&q=85",
+        "alt": "Assorted colorful toys for memory gym",
+        "category": "service"
+      },
+      "about_teacher": {
+        "url": "https://images.unsplash.com/photo-1544717305-2782549b5136?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwzfHx3b21hbiUyMHRlYWNoZXIlMjBzbWlsaW5nJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzcwNTYxMTg5fDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Friendly female teacher holding a folder",
+        "category": "about"
+      },
+      "problems_empathy": {
+        "url": "https://images.unsplash.com/photo-1758598737529-3b326b4c8a55?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NjZ8MHwxfHNlYXJjaHwxfHxwYXJlbnQlMjBhbmQlMjBjaGlsZCUyMHJlYWRpbmclMjBib29rJTIwdG9nZXRoZXJ8ZW58MHx8fHwxNzcwNTYxMTk0fDA&ixlib=rb-4.1.0&q=85",
+        "alt": "Parent reading with child",
+        "category": "problems"
+      }
+    }
+  },
+  "motion": {
+    "libraries": ["framer-motion"],
+    "rules": {
+      "scroll": "Use 'whileInView' for section entrances (fade-up).",
+      "hover": "Playful scale and rotation (rotate-1 or rotate-2) on cards.",
+      "hero": "Gentle floating animation for background elements (y: [0, -10, 0])."
+    }
+  },
+  "accessibility": {
+    "contrast": "Ensure text on colored backgrounds meets AA standard. Use dark text on yellow/orange.",
+    "focus": "Visible focus rings on all interactive elements.",
+    "reduced_motion": "Respect prefers-reduced-motion media query."
+  },
+  "instructions_to_main_agent": {
+    "general": "Build a single-page React app. Use 'react-scroll' for navigation links. Keep the tone warm and inviting.",
+    "logo": "Since no logo is provided, create a text-based logo using the Heading font (Fredoka) with a playful color mix (e.g., 'Uczy' in Primary, 'dełko' in Secondary).",
+    "sections": [
+      "Hero: Emotional headline, CTA 'Umów się na konsultację', happy child image.",
+      "Problems: 'Czy Twoje dziecko...' list. Use empathy, not fear.",
+      "Solution: 'Metoda Uczydełko' - stress-free, individual approach.",
+      "Services: 4 cards (Math, Reading, Memory, Compensatory). Use icons + images.",
+      "About: 'O mnie' - Julia Plichta. Use the teacher placeholder image.",
+      "How it works: Simple 3-step process (Contact -> Diagnosis -> Classes).",
+      "Testimonials: 3 placeholder quotes from happy parents.",
+      "Contact: Form (Name, Phone, Email, Message) + WhatsApp/Phone buttons."
+    ],
+    "tech_stack": "React, Tailwind CSS, Framer Motion, Lucide React, Shadcn UI (customized)."
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Do not use generic centered layouts. Use asymmetry.",
+    "Use 2-3x more spacing than typical designs.",
+    "Every interaction needs micro-animations.",
+    "Use 'sonner' for toasts.",
+    "All interactive elements MUST include 'data-testid'.",
+    "Do not use 'transition: all'.",
+    "Create depth through layered design elements."
+  ]
+}
