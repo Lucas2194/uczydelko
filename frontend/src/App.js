@@ -26,10 +26,9 @@ import { Input } from "./components/ui/input";
 import { Textarea } from "./components/ui/textarea";
 import { Card, CardContent } from "./components/ui/card";
 import { Toaster, toast } from "sonner";
-import axios from "axios";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+// Formspree endpoint - ZAMIEŃ NA SWÓJ po rejestracji na formspree.io
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
 
 // Animation variants
 const fadeInUp = {
@@ -821,9 +820,28 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      await axios.post(`${API}/contact`, formData);
-      toast.success("Wiadomość wysłana! Odezwę się wkrótce.");
-      setFormData({ name: "", phone: "", email: "", message: "" });
+      // Wysyłanie przez Formspree (darmowe do 50 wiadomości/miesiąc)
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.message,
+          _subject: `Nowa wiadomość od ${formData.name} - Uczydełko`
+        })
+      });
+
+      if (response.ok) {
+        toast.success("Wiadomość wysłana! Odezwę się wkrótce.");
+        setFormData({ name: "", phone: "", email: "", message: "" });
+      } else {
+        throw new Error("Form submission failed");
+      }
     } catch (error) {
       toast.error("Ups! Coś poszło nie tak. Spróbuj ponownie lub zadzwoń.");
     } finally {
