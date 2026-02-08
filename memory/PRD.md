@@ -79,3 +79,11 @@ Jednostronicowy landing page dla marki edukacyjnej Uczydełko, prowadzonej przez
 2. Dodaj prawdziwe opinie rodziców
 3. Rozważ dodanie cennika zajęć
 4. Dodaj SEO meta tags dla lepszej widoczności w Google
+
+## Darmowy Hosting (2025-02-08)
+Projekt przygotowany do darmowego hostingu na Vercel:
+- Formularz kontaktowy zmieniony na Formspree (darmowe 50 wiadomości/mies)
+- Usunięta zależność od backendu
+- Instrukcja wdrożenia: `/app/DEPLOY_VERCEL_INSTRUKCJA.md`
+
+**Koszt:** ~40 zł/rok (tylko domena) vs 600 kredytów/rok na Emergent
