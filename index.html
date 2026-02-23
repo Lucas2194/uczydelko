@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Uczydełko – spokojna nauka dla dzieci na Kaszubach</title>
+  <meta name="description" content="Uczydełko – indywidualne i grupowe zajęcia edukacyjne dla dzieci 4–10 lat. Bez presji, w bezpiecznej atmosferze. Kaszuby."/>
+  <meta name="author" content="Julia Plichta"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #fdfcf9;
+      --bg-soft: #f4f6f3;
+      --bg-accent: #e7f1ed;
+      --text-main: #1f2d2a;
+      --text-soft: #5f6f6b;
+      --accent: #4f8f83;
+      --accent-dark: #3d756b;
+      --radius: 18px;
+      --shadow-soft: 0 8px 30px rgba(0,0,0,0.06);
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.9rem 1.4rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      box-shadow: 0 6px 18px rgba(79, 143, 131, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(79, 143, 131, 0.35);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      padding: 0.9rem 1.4rem;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 2px solid var(--accent);
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(253,252,249,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-soft);
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 5.5rem 0 4.5rem;
+      background: linear-gradient(180deg, #fdfcf9 0%, #f4f6f3 100%);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p.lead {
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      margin-bottom: 2rem;
+      max-width: 520px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      padding: 2rem;
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .hero-card ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.7rem;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    .hero-card li {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+    }
+
+    .hero-card li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* SECTION BASE */
+
+    section {
+      padding: 4.5rem 0;
+    }
+
+    .section-soft {
+      background: var(--bg-soft);
+    }
+
+    .section-accent {
+      background: var(--bg-accent);
+    }
+
+    .section-header {
+      max-width: 620px;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1.2;
+      margin-bottom: 0.7rem;
+      letter-spacing: -0.015em;
+    }
+
+    .section-header p {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    /* PROBLEMS */
+
+    .problems-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .problem-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1.6rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .problem-card h3 {
+      font-size: 1rem;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .problem-card p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin: 0;
+    }
+
+    /* SOLUTION */
+
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.6rem;
+    }
+
+    .solution-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .solution-card h3 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .solution-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    /* OFFER */
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.6rem;
+    }
+
+    .offer-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      height: 100%;
+    }
+
+    .offer-card h3 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .offer-card .desc {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    .offer-meta {
+      margin-top: auto;
+      display: grid;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+    }
+
+    .offer-meta strong {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-photo {
+      background: linear-gradient(135deg, #dfeee9, #eef6f3);
+      border-radius: var(--radius);
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .about-text h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .about-text p {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+    }
+
+    /* PROCESS */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.6rem;
+    }
+
+    .process-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .process-card h3 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .process-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    /* TESTIMONIALS */
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.6rem;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    .testimonial-card strong {
+      font-weight: 600;
+      color: var(--text-main);
+      font-size: 0.85rem;
+    }
+
+    /* CTA FINAL */
+
+    .cta-final {
+      background: linear-gradient(135deg, #e7f1ed, #f4f6f3);
+      border-radius: var(--radius);
+      padding: 3rem 2rem;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      gap: 1.2rem;
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cta-final h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+    }
+
+    .cta-final p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--text-soft);
+    }
+
+    .cta-final form {
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.9rem;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-final input,
+    .cta-final textarea {
+      padding: 0.75rem 0.85rem;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.1);
+      font-family: inherit;
+      font-size: 0.9rem;
+      resize: vertical;
+    }
+
+    .cta-final textarea {
+      min-height: 90px;
+    }
+
+    .cta-note {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      margin-top: 0.4rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 3rem 0 2rem;
+      background: #f4f6f3;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.4rem;
+      align-items: center;
+    }
+
+    .footer-brand {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .footer-contact {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-soft);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 4rem;
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">Uczydełko</div>
+    <nav class="nav-links">
+      <a href="#problemy">Dla kogo</a>
+      <a href="#oferta">Oferta</a>
+      <a href="#o-mnie">O mnie</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#kontakt" class="btn-primary">Napisz do mnie</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Daj swojemu dziecku spokojną drogę do nauki i wiary w siebie</h1>
+        <p class="lead">
+          Indywidualne i grupowe zajęcia edukacyjne dla dzieci 4–10 lat na Kaszubach — bez presji, w bezpiecznej atmosferze.
+        </p>
+        <div class="hero-cta">
+          <a href="#kontakt" class="btn-primary">Umów rozmowę</a>
+          <a href="#oferta" class="btn-secondary">Zobacz ofertę</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <strong>W Uczydełku dzieci uczą się:</strong>
+        <ul>
+          <li>bez stresu i ocen</li>
+          <li>w swoim tempie</li>
+          <li>przez zabawę i doświadczenie</li>
+          <li>w atmosferze bezpieczeństwa</li>
+          <li>z uważnością na emocje</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMY -->
+  <section class="section-soft" id="problemy">
+    <div class="container">
+      <div class="section-header">
+        <h2>Gdy nauka zaczyna być źródłem stresu</h2>
+        <p>
+          Jeśli tu jesteś, możliwe że Twoje dziecko potrzebuje nie więcej wysiłku — ale innego podejścia.
+        </p>
+      </div>
+
+      <div class="problems-grid">
+        <div class="problem-card">
+          <h3>Trudności w nauce</h3>
+          <p>Problemy z czytaniem, pisaniem lub matematyką mimo starań.</p>
+        </div>
+
+        <div class="problem-card">
+          <h3>Brak koncentracji</h3>
+          <p>Łatwe rozpraszanie się i trudność w dokończeniu zadań.</p>
+        </div>
+
+        <div class="problem-card">
+          <h3>Spadek motywacji</h3>
+          <p>Niechęć do nauki i szybkie zniechęcanie się.</p>
+        </div>
+
+        <div class="problem-card">
+          <h3>Stres szkolny</h3>
+          <p>Napięcie, lęk przed błędami i utrata wiary w siebie.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROZWIĄZANIE -->
+  <section id="rozwiazanie">
+    <div class="container">
+      <div class="section-header">
+        <h2>Jak pomaga Uczydełko</h2>
+        <p>
+          Pracuję z dzieckiem — nie z programem. Najpierw bezpieczeństwo i relacja, potem nauka.
+        </p>
+      </div>
+
+      <div class="solution-grid">
+        <div class="solution-card">
+          <h3>Multisensoryka</h3>
+          <p>Dzieci uczą się przez ruch, zmysły, doświadczenie i zabawę.</p>
+        </div>
+
+        <div class="solution-card">
+          <h3>Indywidualne tempo</h3>
+          <p>Bez porównań, bez presji, bez pośpiechu.</p>
+        </div>
+
+        <div class="solution-card">
+          <h3>Bezpieczna atmosfera</h3>
+          <p>Dziecko może popełniać błędy i uczyć się bez lęku.</p>
+        </div>
+
+        <div class="solution-card">
+          <h3>Relacja i zaufanie</h3>
+          <p>Buduję poczucie sprawczości i wiary w siebie.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section class="section-soft" id="oferta">
+    <div class="container">
+      <div class="section-header">
+        <h2>Oferta zajęć</h2>
+        <p>
+          Zajęcia indywidualne i grupowe dla dzieci w wieku przedszkolnym i wczesnoszkolnym.
+        </p>
+      </div>
+
+      <div class="offer-grid">
+
+        <div class="offer-card">
+          <h3>➕ Matematyka</h3>
+          <p class="desc">
+            Nauka liczenia, rozumienia działań i myślenia matematycznego poprzez konkret, ruch i zabawę.
+          </p>
+          <div class="offer-meta">
+            <div><strong>Efekt dla dziecka:</strong> Większa pewność siebie i zrozumienie matematyki.</div>
+            <div><strong>Korzyść dla rodzica:</strong> Spokój, że dziecko naprawdę rozumie materiał.</div>
+          </div>
+        </div>
+
+        <div class="offer-card">
+          <h3>✏️ Pisanie i czytanie</h3>
+          <p class="desc">
+            Wsparcie w nauce czytania, pisania, analizy słuchowej i wzrokowej oraz grafomotoryki.
+          </p>
+          <div class="offer-meta">
+            <div><strong>Efekt dla dziecka:</strong> Lepsza płynność czytania i czytelniejsze pismo.</div>
+            <div><strong>Korzyść dla rodzica:</strong> Mniej napięcia przy nauce w domu.</div>
+          </div>
+        </div>
+
+        <div class="offer-card">
+          <h3>🧠 Siłownia pamięci</h3>
+          <p class="desc">
+            Ćwiczenia koncentracji, pamięci, motywacji, relaksacji i integracji sensorycznej.
+          </p>
+          <div class="offer-meta">
+            <div><strong>Efekt dla dziecka:</strong> Lepsza uwaga i spokój wewnętrzny.</div>
+            <div><strong>Korzyść dla rodzica:</strong> Dziecko chętniej siada do nauki.</div>
+          </div>
+        </div>
+
+        <div class="offer-card">
+          <h3>🌿 Zajęcia kompensacyjno-wyrównawcze</h3>
+          <p class="desc">
+            Indywidualne wsparcie dzieci z trudnościami edukacyjnymi lub rozwojowymi.
+          </p>
+          <div class="offer-meta">
+            <div><strong>Efekt dla dziecka:</strong> Stopniowe nadrabianie zaległości bez stresu.</div>
+            <div><strong>Korzyść dla rodzica:</strong> Poczucie, że dziecko jest rozumiane.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- O MNIE -->
+  <section id="o-mnie">
+    <div class="container">
+      <div class="section-header">
+        <h2>O mnie — Julia Plichta</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="julia.jpg">
+        </div>
+
+        <div class="about-text">
+          <h3>Dlaczego powstało Uczydełko</h3>
+          <p>
+            Stworzyłam Uczydełko, bo widziałam dzieci, które nie były „słabsze” — tylko uczyły się inaczej.
+            Potrzebowały nie presji, ale bezpieczeństwa, relacji i zrozumienia.
+          </p>
+          <p>
+            W pracy z dziećmi najważniejsze są dla mnie emocje, poczucie sprawczości i indywidualne tempo rozwoju.
+            Nie pracuję według schematów — pracuję z dzieckiem.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JAK WYGLĄDAJĄ ZAJĘCIA -->
+  <section class="section-soft">
+    <div class="container">
+      <div class="section-header">
+        <h2>Jak wyglądają zajęcia</h2>
+        <p>
+          Tutaj dziecko nie boi się próbować. Może popełniać błędy — i właśnie dzięki temu się uczy.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-card">
+          <h3>Indywidualnie i grupowo</h3>
+          <p>Kameralne warunki i uważność na potrzeby dziecka.</p>
+        </div>
+
+        <div class="process-card">
+          <h3>Bez stresu i ocen</h3>
+          <p>Bez porównań, rankingów i presji.</p>
+        </div>
+
+        <div class="process-card">
+          <h3>Nauka przez zabawę</h3>
+          <p>Ruch, gry, doświadczenia i multisensoryka.</p>
+        </div>
+
+        <div class="process-card">
+          <h3>Tempo dziecka</h3>
+          <p>Dopasowane do jego możliwości i etapu rozwoju.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIE -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2>Opinie rodziców</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          „Moje dziecko w końcu przestało bać się matematyki. Zaczęło wierzyć w siebie.”
+          <strong>— Anna, mama 7-latki</strong>
+        </div>
+
+        <div class="testimonial-card">
+          „Pierwsze zajęcia, z których syn wraca spokojny i uśmiechnięty.”
+          <strong>— Michał, tata 6-latka</strong>
+        </div>
+
+        <div class="testimonial-card">
+          „Uczydełko to miejsce, gdzie dzieci są naprawdę widziane.”
+          <strong>— Karolina, mama 8-latki</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="kontakt">
+    <div class="container">
+      <div class="cta-final">
+        <h2>Porozmawiajmy spokojnie o Twoim dziecku</h2>
+        <p>
+          Bez zobowiązań. Bez presji. Pierwsza rozmowa to po prostu bezpieczna przestrzeń na pytania.
+        </p>
+
+        <form action="mailto:plichtajulia1@gmail.com" method="post" enctype="text/plain">
+          <input type="text" name="name" placeholder="Twoje imię" required />
+          <input type="email" name="email" placeholder="Twój e-mail" required />
+          <textarea name="message" placeholder="Kilka słów o dziecku lub pytanie"></textarea>
+          <button type="submit" class="btn-primary">Napisz do mnie</button>
+        </form>
+
+        <div class="cta-note">
+          Możesz też zadzwonić: <strong>516 760 656</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-brand">Uczydełko — Julia Plichta</div>
+    <div class="footer-contact">
+      <div>📧 plichtajulia1@gmail.com</div>
+      <div>📞 516 760 656</div>
+      <div>📍 Kaszuby</div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © <span id="year"></span> Uczydełko. Wszystkie prawa zastrzeżone.
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
